@@ -10,8 +10,7 @@ import pyperclip #剪切板控制
 
 def convert_qr(text):
 	file_name = time.strftime("%Y-%m-%d %H-%M-%S", time.localtime())
-	# file_dir = 'D:/DesperateAngel/Pictures/Saved Pictures/'
-	file_dir = 'D:/'
+	file_dir = 'D:/' # 存储文件的路径
 	file_type = ".jpg"
 	qr = qrcode.QRCode(
 		version=6,
@@ -23,7 +22,7 @@ def convert_qr(text):
 	qr.make(fit=True)
 	img = qr.make_image(fill_color="black", back_color="white")
 	img.save(file_dir+file_name+file_type)
-	img.show()
+	img.show() #调用默认图片显示，建议安装
 
 def conv_code(img): #二维码转换文字
 	qrcode = decode(img)
@@ -36,7 +35,7 @@ def conv_code(img): #二维码转换文字
 if __name__ == '__main__':
 	types = ImageGrab.grabclipboard()
 	if(types == None):
-		convert_qr(pyperclip.paste())
+		convert_qr(pyperclip.paste()) #文字转QR
 	else:
-		conv_code(types) #转文字
+		conv_code(types) #QR转文字
 	

@@ -1,0 +1,24 @@
+## qr_image_python
+
+一个自动文字转QR图片的一个小程序
+
+### 功能说明
+
++ 读取**剪切板内容**,转换成**文字或图片**
++ QR图片存储
+
+建议使用 [Honeyview](https://cn.bandisoft.com/honeyview/) 图片浏览器享受更好的体验
+
+### 安装说明
+
+此程序运行在 Python 3.6.5 以上
+
+使用以下包
+
+```python
+pip install qrcode pillow pyzbar pyperclip
+```
+
+### 如何使用
+
+复制 https://www.google.com/ ,然后运行 qr.py 
